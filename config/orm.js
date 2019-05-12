@@ -6,6 +6,7 @@ var orm = {
         let queryString = "SELECT * FROM ??";
         connection.query(queryString,[tableName],(error,results)=>{
             if (error) throw error;
+            console.log(results)
             return results;
         })
     },
@@ -26,5 +27,6 @@ var orm = {
         })
     }
 }
+// console.log(orm.selectAll("burgers"));
 
 module.exports = orm;

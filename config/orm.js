@@ -16,7 +16,15 @@ var orm = {
             return results;
         })
     },
-    updateOne: function(){}
+    updateOne: function(tableName,devouredTrue,id){
+        let queryString = "UPDATE ?? SET ? WHERE ?";
+        let devoured = {devoured:devouredTrue};
+        let idvar = {id:id};
+        connection.query(queryString,[tableName,devoured,idvar],(error,results)=>{
+            if (error) throw error;
+            return results;
+        })
+    }
 }
 
 module.exports = orm;

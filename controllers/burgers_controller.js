@@ -23,7 +23,10 @@ router.post("/api/burgers", (req, res) => {
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-    burger.updateOne(req.body.devouredTrue, req.params.id, data => {
+    console.log(req.body);
+    let intID = parseInt(req.params.id);
+    let varTrue = true;
+    burger.updateOne(varTrue, intID, data => {
         console.log(`Updated burger id=${req.params.id}!`);
         res.sendStatus(200).end();
     });

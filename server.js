@@ -1,4 +1,5 @@
 var express = require("express");
+var path = require("path");
 
 // DB connection
 var connection = require('./config/connection');
@@ -8,6 +9,8 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, '/public')));
+// console.log("path is "+ path.join(__dirname, 'public/assets/js/burgers.js'));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +26,9 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_controller");
 
 app.use(routes);
+
+// var frontend = require("./public/assets/js/burgers");
+// app.use(frontend);
 
 
 app.listen(PORT, function () {

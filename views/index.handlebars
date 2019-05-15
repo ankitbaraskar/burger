@@ -4,12 +4,12 @@
     <h4>Burgers not eaten yet</h4>
     {{#each burgers}}
         {{#unless devoured}}
-<p>
-    {{id}}. {{burger_name}}
-    <button class="devour" data-id="{{id}}" data-name="{{burger_name}}">
-		Devour it!
-	</button>
-</p>
+            <p>
+                {{id}}. {{burger_name}}
+                <button class="devour" data-id="{{id}}" data-name="{{burger_name}}">
+                Devour it!
+                </button>
+            </p>
         {{/unless}}
     {{/each}}
 </div>
@@ -18,12 +18,12 @@
     <h4>Eaten burgers</h4>
     {{#each burgers}}
         {{#if devoured}}
-            {{id}}. {{burger_name}}
+            <p> {{id}}. {{burger_name}} </p>
         {{/if}}
-  {{/each}}
+    {{/each}}
 </div>
 
-<form>
-    <input type="text" name="burgerName" size="35"><br>
+<form class="create-burger">
+    <input type="text" id="burger-name-id" name="burgerName" size="35"><br>
     <input type="submit" value="Submit">
 </form>

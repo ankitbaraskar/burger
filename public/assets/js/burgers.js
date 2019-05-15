@@ -26,7 +26,7 @@ $(function () {
     );
   });
 
-  $(".create-burger").on("click", function (event) {
+  $("#submit-id").on("click", function (event) {
     event.preventDefault();
 
     let burgerName = $("#burger-name-id").val().trim();
